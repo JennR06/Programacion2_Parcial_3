@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(90deg, #6b73ff, #8e7fff);
+  padding: 30px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.title-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 25px;
+}
+
+/* Tarjeta grande destacada */
+.product-card.large {
+  grid-column: span 2;
+}
+
+/* Tarjetas normales */
+.product-card {
+  background: linear-gradient(to bottom right, #7b88f8, #925dca);
+  border-radius: 20px;
+  overflow: hidden;
+  color: white;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Etiquetas */
+.label {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+}
+
+.label.new {
+  background-color: #00c853;
+}
+
+.label.offer {
+  background-color: #ff9800;
+}
+
+/* Icono de producto (emoji o imagen) */
+.product-icon {
+  font-size: 3rem;
+  text-align: center;
+  padding: 40px 0 10px;
+}
+
+/* Contenido de la tarjeta */
+.product-info {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 0 0 20px 20px;
+}
+
+.product-info.white {
+  background-color: #fff;
+  color: #333;
+}
+
+.category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0.7;
+  margin-bottom: 5px;
+  display: block;
+}
+
+h3 {
+  margin: 5px 0;
+  font-size: 1.2rem;
+}
+
+.product-info p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+
+.rating {
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  color: #fdd835;
+}
+
+.rating span {
+  color: #6abf69;
+  margin-left: 6px;
+}
+
+.rating.green {
+  color: #4caf50;
+}
+
+/* Precios */
+.price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.price strong {
+  color: #00e676;
+  font-size: 1.3rem;
+}
+
+.price del {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin-left: 8px;
+}
+
+.price.green del {
+  color: #999;
+}
+
+/* Descuento */
+.discount {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: #ff5252;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Botones */
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px 5px 0 0;
+}
+
+.cart {
+  background-color: #1e88e5;
+  color: white;
+}
+
+.cart:hover {
+  background-color: #1565c0;
+}
+
+.wishlist {
+  background-color: #e0e0e0;
+  color: #444;
+}
+
+.wishlist:hover {
+  background-color: #c8c8c8;
+}
+
+.buy {
+  background-color: white;
+  color: #5e35b1;
+}
+
+.buy:hover {
+  background-color: #eee;
+}
+
+.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #8e7fff;
+  border-radius: 10px;
+}
