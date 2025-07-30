@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('fondo_instituto.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #058342;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-izquierda img,
+.logo-derecha img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.texto-header {
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    min-width: 180px;
+}
+
+.contenedor {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    max-width: 300px;
+}
+
+.reloj {
+    font-size: 2.5em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+
+footer {
+    background: #058342;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Responsive styles */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 5px;
+    }
+    .logo-izquierda,
+    .logo-derecha {
+        margin: 10px 0;
+    }
+    .logo-izquierda img,
+    .logo-derecha img {
+        width: 55px;
+        height: 55px;
+    }
+    .texto-header h1 {
+        font-size: 1.2em;
+    }
+    .contenedor {
+        padding: 15px;
+        max-width: 95vw;
+    }
+}
+
+@media (max-width: 400px) {
+    .texto-header h1 {
+        font-size: 1em;
+    }
+    .contenedor {
+        padding: 8px;
+    }
+}
