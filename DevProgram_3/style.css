@@ -11,6 +11,48 @@ body {
   line-height: 1.6;
 }
 
+.contenido-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.texto-intro {
+  flex: 1;
+  min-width: 250px;
+}
+
+.imagen-intro img {
+  max-width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contenido-sobre {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.texto-sobre {
+  flex: 2;
+  min-width: 250px;
+}
+
+.imagen-sobre img {
+  max-width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.imagen-sobre img:hover {
+  transform: scale(1.05);
+}
+
 /* Navbar */
 nav,
 .nav-bar {
@@ -79,71 +121,115 @@ h1, h2, h3 {
 
 /* Habilidades */
 /* Agrupa las habilidades en una fila horizontal */
-.habilidades {
+.cards-horizontales {
   display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
-  margin-bottom: 30px;
-  flex-wrap: wrap; /* Para que sea responsive */
+  padding-top: 10px;
 }
 
-.habilidad {
-  background: #fffbea;
-  border: 2px solid #ffe082;
-  border-radius: 15px;
-  padding: 25px 30px;
-  margin-bottom: 0;
-  min-width: 220px;
-  box-shadow: 0 2px 8px rgba(255, 204, 0, 0.08);
-  text-align: center;
-  transition: transform 0.2s;
+.card {
+  background-color: #ffe8f1;
+  border: 1px solid #ffc3dc;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-.habilidad:hover {
-  transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 6px 18px rgba(255, 204, 0, 0.18);
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-.habilidad h3 {
-  color: #111;
+.card h3 {
   margin-bottom: 10px;
+  color: #c9184a;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
 }
 
 /* Reseñas estilo caricatura */
-.reseñas {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap; /* Permite que se acomoden en varias líneas si no hay espacio */
+.testimonios {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.testimonios h2 {
+  text-align: center;
   margin-bottom: 30px;
 }
 
-.reseña {
-  background-color: #fff;
-  border: 2px dashed #ffc107;
-  border-radius: 15px;
-  padding: 20px;
-  width: 300px;
+.cards-horizontales {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: nowrap; /* No permite que bajen a otra línea */
+  overflow-x: auto;  /* Permite scroll lateral en móviles */
+  padding-bottom: 10px;
+}
+
+.card {
+  border: 1.5px solid #ffc107;
+  padding: 18px 15px;
+  width: 260px;
+  min-width: 220px;
   text-align: center;
-  box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
-  margin-bottom: 0; /* Elimina espacio inferior para alineación horizontal */
-  transition: transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border-radius: 16px;
+  background-color: #fffbe9;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex-shrink: 0; /* No se reduce el ancho en scroll */
+  margin-bottom: 0;
 }
 
-.reseña:hover {
-  transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 6px 18px rgba(255, 204, 0, 0.18);
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(255,193,7,0.18);
 }
 
-.reseña img {
+.card img {
   width: 80px;
+  height: 80px;
+  object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  border: 2px solid #ffe082;
+  background: #fff;
 }
 
-.reseña p {
+.card p {
   font-size: 15px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #b8860b;
+}
+
+.card span {
+  font-style: italic;
+  color: #555;
+  font-size: 13px;
+}
+
+/* Opcional: mejora el scroll en móviles */
+.cards-horizontales::-webkit-scrollbar {
+  height: 8px;
+}
+.cards-horizontales::-webkit-scrollbar-thumb {
+  background: #ffe082;
+  border-radius: 4px;
 }
 
 /* Contacto */
@@ -261,3 +347,11 @@ h1, h2, h3 {
     gap: 20px;
   }
 
+  @media screen and (max-width: 768px) {
+  /* ...otras reglas... */
+  .reseñas {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
